@@ -5,6 +5,7 @@ from setuptools import setup, find_packages
 version = (
     SourceFileLoader("mlflow.version", os.path.join("mlflow", "version.py")).load_module().VERSION
 )
+print(version, 'VERSION')
 
 
 # Get a list of all files in the JS directory to include in our module
