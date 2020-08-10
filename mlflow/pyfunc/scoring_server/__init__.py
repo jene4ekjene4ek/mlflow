@@ -72,6 +72,9 @@ def parse_json_input(json_input, orient="split", schema: Schema = None):
     # pylint: disable=broad-except
     try:
         print(json_input, 'JSON_INPUT')
+        d = json_input.get('data')[0][0]
+        d = d*2
+        json_input.update({"data": [[d]]})
 
         return _dataframe_from_json(json_input, pandas_orient=orient, schema=schema)
     except Exception:
